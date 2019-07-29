@@ -44,12 +44,20 @@
     <Compile Include="Django_Struct\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="collection\static\css\style.css" />
+    <Content Include="collection\templates\base.html" />
+    <Content Include="collection\templates\about.html" />
+    <Content Include="collection\templates\contact.html" />
     <Content Include="collection\templates\index.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="collection\" />
     <Folder Include="collection\migrations\" />
+    <Folder Include="collection\static\" />
+    <Folder Include="collection\static\images\" />
+    <Folder Include="collection\static\js\" />
+    <Folder Include="collection\static\css\" />
     <Folder Include="collection\templates\" />
     <Folder Include="Django_Struct\" />
   </ItemGroup>
