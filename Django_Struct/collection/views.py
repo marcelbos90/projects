@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from collection.models import ProjectForm
+from collection.forms import ProjectForm
 from collection.models import Project
 
 # Create your views here.
@@ -8,16 +8,16 @@ def index(request):
     projects = Project.objects.all()
     return render(request, 'index.html', {'projects': projects,})
 
-def project_detail(request, uid):
+def project_detail(request, slug):
     # grab the object
-    project = Project.objects.get(uid=uid)
+    project = Project.objects.get(slug=slug)
 
     # and pass to the template
     return render(request, 'projects/project_detail.html', {'project': project,})
 
-def edit_project(request, uid):
+def edit_project(request, slug):
     # grab the object
-    project = Project.objects.get(uid=uid)
+    project = Project.objects.get(slug=slug)
 
     # set the form we're using
     form_class = ProjectForm
@@ -29,10 +29,10 @@ def edit_project(request, uid):
         if form.is_valid():
             # save the new data
             form.save()
-            return redirect('project_detail', uid=project.uid)
-        # otherwise just create the form
-        else:
-            form = form_class(instance=project)
+            return redirect('project_detail', slug=project.slug)
+    # otherwise just create the form
+    else:
+        form = form_class(instance=project)
 
-        # and render the template
-        return render(request, 'projects/edit_project.html', {'project': project, 'form': form,})
+    # and render the template
+    return render(request, 'projects/edit_project.html', {'project': project, 'form': form,})

@@ -7,6 +7,7 @@ from collection.models import Project, WorkPackage
 class ProjectAdmin(admin.ModelAdmin):
     model = Project
     list_display = ('name', 'description', 'uid')
+    prepopulated_fields = {'slug': ('name',)}
 
 
 class WorkPackageAdmin(admin.ModelAdmin):

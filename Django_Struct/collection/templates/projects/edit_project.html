@@ -1,4 +1,7 @@
 ﻿{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
 {% block title %}
     Edit {{ project.name }} - {{ block.super }}
 {% endblock title %}
@@ -6,7 +9,7 @@
     <h1>Edit "{{ project.name }}"</h1>
     <form role="form" action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Submit</button>
     </form>
 {% endblock content %}
