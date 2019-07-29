@@ -32,6 +32,9 @@
   <ItemGroup>
     <Compile Include="collection\admin.py" />
     <Compile Include="collection\apps.py" />
+    <Compile Include="collection\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="collection\migrations\__init__.py" />
     <Compile Include="collection\models.py" />
     <Compile Include="collection\tests.py" />
@@ -49,6 +52,7 @@
     <Content Include="collection\templates\about.html" />
     <Content Include="collection\templates\contact.html" />
     <Content Include="collection\templates\index.html" />
+    <Content Include="collection\templates\projects\project_detail.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="collection\" />
@@ -58,6 +62,7 @@
     <Folder Include="collection\static\js\" />
     <Folder Include="collection\static\css\" />
     <Folder Include="collection\templates\" />
+    <Folder Include="collection\templates\projects\" />
     <Folder Include="Django_Struct\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
