@@ -14,6 +14,7 @@ urlpatterns = [
 
     # project page on the basis of the uuid
     path('projects/<uid>/', views.project_detail, name='project_detail'),
+    path('projects/<uid>/edit/', views.edit_project, name='edit_project'),
 
 
     path('accounts/', include('registration.backends.simple.urls')),

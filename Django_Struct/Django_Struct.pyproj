@@ -52,6 +52,7 @@
     <Content Include="collection\templates\about.html" />
     <Content Include="collection\templates\contact.html" />
     <Content Include="collection\templates\index.html" />
+    <Content Include="collection\templates\projects\edit_project.html" />
     <Content Include="collection\templates\projects\project_detail.html" />
   </ItemGroup>
   <ItemGroup>
