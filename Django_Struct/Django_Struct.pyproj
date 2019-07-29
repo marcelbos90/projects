@@ -49,7 +49,6 @@
     <Content Include="collection\templates\about.html" />
     <Content Include="collection\templates\contact.html" />
     <Content Include="collection\templates\index.html" />
-    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="collection\" />
