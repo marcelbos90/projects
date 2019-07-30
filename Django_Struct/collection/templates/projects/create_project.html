@@ -1,12 +1,10 @@
 {% extends 'base.html' %}
-
 {% load crispy_forms_tags %}
-
 {% block title %}
-    Edit {{ project.name }} - {{ block.super }}
+    Create a project - {{ block.super }}
 {% endblock title %}
 {% block content %}
-    <h1>Edit "{{ project.name }}"</h1>
+    <h1>Create a project</h1>
     <form role="form" action="" method="post">
         {% csrf_token %}
         {{ form|crispy }}

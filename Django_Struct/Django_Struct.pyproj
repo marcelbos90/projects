@@ -32,6 +32,9 @@
   <ItemGroup>
     <Compile Include="collection\admin.py" />
     <Compile Include="collection\apps.py" />
+    <Compile Include="collection\backends.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="collection\forms.py">
       <SubType>Code</SubType>
     </Compile>
@@ -52,7 +55,9 @@
     <Content Include="collection\templates\about.html" />
     <Content Include="collection\templates\contact.html" />
     <Content Include="collection\templates\index.html" />
+    <Content Include="collection\templates\projects\create_project.html" />
     <Content Include="collection\templates\projects\edit_project.html" />
+    <Content Include="collection\templates\projects\project_index.html" />
     <Content Include="collection\templates\projects\project_detail.html" />
     <Content Include="collection\templates\registration\login.html" />
     <Content Include="collection\templates\registration\logout.html" />

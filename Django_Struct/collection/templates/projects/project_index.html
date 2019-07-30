@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Homepage - {{ block.super }}{% endblock title %}
+{% block content %}
+    <h1 class="mt-2">Projecten</h1>
+    
+    <table class="table table-striped">
+        <tbody>
+        {% for project in projects %}
+            <td>
+                <a href="{% url 'project_detail' slug=project.slug %}">
+                    {{ project.name }}
+                </a>
+            </td>
+            <td>
+                ... users
+            </td>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

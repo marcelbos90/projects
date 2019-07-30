@@ -3,6 +3,7 @@ from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
 from django.urls import path, include
 from django.views.generic import TemplateView
 
+from collection.backends import MyRegistrationView
 from collection import views
 
 urlpatterns = [
@@ -14,6 +15,8 @@ urlpatterns = [
     path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
 
     # project page on the basis of the slug
+    path('projects/index', views.project_index, name='project_index'),
+
     path('projects/<slug>/', views.project_detail, name='project_detail'),
     path('projects/<slug>/edit/', views.edit_project, name='edit_project'),
 
@@ -30,6 +33,12 @@ urlpatterns = [
     path('accounts/password/done/',
         PasswordResetDoneView.as_view(template_name='registration/password_reset_complete.html'),
         name='password_reset_complete'),
+
+    # additional registration page so when a new user signs up, they'll also set up their Project
+    path('accounts/register/',
+        MyRegistrationView.as_view(), name='registration_register'),
+    path('accounts/create_project/',
+        views.create_project, name='registration_create_project'),
 
     # for any URL path starting with accounts/, search for an matching URL path in django-registratiom\n-redux URL's
     path('accounts/', include('registration.backends.simple.urls')),

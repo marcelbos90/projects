@@ -6,7 +6,7 @@ from collection.models import Project, WorkPackage
 # set up automated slug creation
 class ProjectAdmin(admin.ModelAdmin):
     model = Project
-    list_display = ('name', 'description', 'uid')
+    list_display = ('name', 'description', 'uid', 'user')
     prepopulated_fields = {'slug': ('name',)}
 
 
