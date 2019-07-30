@@ -25,7 +25,7 @@ SECRET_KEY = 'd75a3453-734c-4b98-804c-4bea8a05e4ac'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
@@ -33,13 +33,14 @@ INSTALLED_APPS = [
     # Add your apps here to enable them
     'collection',
     'crispy_forms',
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration',
+    
 ]
 
 # Middleware framework

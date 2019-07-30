@@ -54,6 +54,17 @@
     <Content Include="collection\templates\index.html" />
     <Content Include="collection\templates\projects\edit_project.html" />
     <Content Include="collection\templates\projects\project_detail.html" />
+    <Content Include="collection\templates\registration\login.html" />
+    <Content Include="collection\templates\registration\logout.html" />
+    <Content Include="collection\templates\registration\password_change_done.html" />
+    <Content Include="collection\templates\registration\password_change_form.html" />
+    <Content Include="collection\templates\registration\password_reset_complete.html" />
+    <Content Include="collection\templates\registration\password_reset_confirm.html" />
+    <Content Include="collection\templates\registration\password_reset_done.html" />
+    <Content Include="collection\templates\registration\password_reset_email.txt" />
+    <Content Include="collection\templates\registration\password_reset_form.html" />
+    <Content Include="collection\templates\registration\registration_complete.html" />
+    <Content Include="collection\templates\registration\registration_form.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="collection\" />
@@ -63,6 +74,7 @@
     <Folder Include="collection\static\js\" />
     <Folder Include="collection\static\css\" />
     <Folder Include="collection\templates\" />
+    <Folder Include="collection\templates\registration\" />
     <Folder Include="collection\templates\projects\" />
     <Folder Include="Django_Struct\" />
   </ItemGroup>
