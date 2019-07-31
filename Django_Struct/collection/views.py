@@ -70,14 +70,13 @@ def create_project(request):
             # save the object
             project.save()
 
-            # create the slug from our name
-            slug = slugify(name)
-
             # redirect to our newly created project
             return redirect('project_detail', slug=project.slug)
 
-        # otherwise just create the form
-        else:
-            form = form_class()
+    # otherwise just create the form
+    else:
+        form = form_class()
 
-        return render(request, 'projects/create_project.html', {'form': form})
+    return render(request, 'projects/create_project.html', {'form': form,})
+
+# https://stackoverflow.com/questions/15774127/django-registration-how-to-make-account-creation-ask-for-first-last-name
