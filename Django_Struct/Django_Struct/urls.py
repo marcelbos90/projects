@@ -41,6 +41,6 @@ urlpatterns = [
         views.create_project, name='registration_create_project'),
 
     # for any URL path starting with accounts/, search for an matching URL path in django-registratiom\n-redux URL's
-    path('accounts/', include('registration.backends.simple.urls')),
+    path('accounts/', include('registration.backends.default.urls')),
     path('admin/', admin.site.urls),
 ]

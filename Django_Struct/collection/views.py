@@ -4,7 +4,7 @@ from django.http import Http404
 from django.shortcuts import render, redirect
 from django.template.defaultfilters import slugify
 
-from collection.forms import ProjectForm
+from collection.forms import ProjectForm, MyRegistrationForm
 from collection.models import Project
 
 # Create your views here.
@@ -80,3 +80,15 @@ def create_project(request):
     return render(request, 'projects/create_project.html', {'form': form,})
 
 # https://stackoverflow.com/questions/15774127/django-registration-how-to-make-account-creation-ask-for-first-last-name
+def register(sender, user, request, **kwargs):
+    """
+    Called via signals when user registers. Creates different profiles and
+    associations
+    """
+    form_class = MyRegistrationForm(request.Post)
+    # Update first and last name for user
+    user.first_name=form.data['first_name']
+    user.last_name=form.data['last_name']
+    user.save()
+
+    user_registered.connect(user_created)
